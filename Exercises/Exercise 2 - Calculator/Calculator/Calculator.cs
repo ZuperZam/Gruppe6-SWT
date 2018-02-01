@@ -28,5 +28,10 @@ namespace Calculator
         {
 
         }
+
+        public void nuttergoj()
+        {
+
+        }
     }
 }
