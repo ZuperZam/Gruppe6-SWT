@@ -23,19 +23,5 @@ namespace Calculator
         {
             return Math.Pow(a, b);
         }
-
-        public void sutterman()
-        {
-
-        }
-        public void FlytteGral()
-        {
-
-        }
-
-        public void nuttergoj()
-        {
-
-        }
     }
 }
