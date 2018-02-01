@@ -28,5 +28,15 @@ namespace Calculator
         {
 
         }
+
+        public void Hej_Sut()
+        {
+
+        }
+
+        public void suttetrold()
+        {
+
+        }
     }
 }
