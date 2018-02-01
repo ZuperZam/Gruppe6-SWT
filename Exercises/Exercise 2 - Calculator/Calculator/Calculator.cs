@@ -33,5 +33,11 @@ namespace Calculator
         {
 
         }
+
+
+        public void MartinGuffeTrold()
+        {
+
+        }
     }
 }
