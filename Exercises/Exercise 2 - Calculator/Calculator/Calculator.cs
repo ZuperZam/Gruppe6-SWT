@@ -28,6 +28,10 @@ namespace Calculator
         {
 
         }
+        public void FlytteGral()
+        {
+
+        }
 
         public void nuttergoj()
         {
