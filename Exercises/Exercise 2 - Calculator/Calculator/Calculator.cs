@@ -41,18 +41,18 @@ namespace Calculator
 
         public double Divide(double dividend, double divisor)
         {
-            double result = 0;
-
-
             if (divisor == 0)
-            {
-                result = -1;
+                throw new System.DivideByZeroException();
+                
+            return dividend / divisor;
+        }
+
+        public double Divide(double divisor)
+        {
+            if (divisor == 0)
                 throw new System.DivideByZeroException();
 
-            }
-                
-            result = dividend / divisor;
-            return result;
+            return Accumulator / divisor;
         }
 
         public double Accumulator { get; private set; }
