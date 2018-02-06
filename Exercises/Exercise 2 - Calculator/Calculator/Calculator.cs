@@ -19,6 +19,11 @@ namespace Calculator
             return a - b;
         }
 
+        public double Subtract(double subtractor)
+        {
+            return subtractor - Accumulator;
+        }
+
         public double Multiply(double a, double b)
         {
             return a * b;
