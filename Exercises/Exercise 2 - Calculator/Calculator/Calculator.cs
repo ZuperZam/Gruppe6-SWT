@@ -39,6 +39,11 @@ namespace Calculator
             return Math.Pow(a, b);
         }
 
+        public double Power(double exponent)
+        {
+            return Math.Pow(Accumulator, exponent);
+        }
+
         public double Divide(double dividend, double divisor)
         {
             if (divisor == 0)
