@@ -39,5 +39,7 @@ namespace Calculator
             result = dividend / divisor;
             return result;
         }
+
+        public double Accumulator { get; private set; }
     }
 }
