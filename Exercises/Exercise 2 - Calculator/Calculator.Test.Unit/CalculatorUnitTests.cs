@@ -24,7 +24,8 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Add(a, b), Is.EqualTo(result));
         }
 
-        [TestCase(3, 8)]
+        [TestCase(3, 3)]
+        [TestCase(3, 6)]
         public void Add_PosAndNegNumbers_Accumulator(int addend, int result)
         {
             Assert.That(_uut.Add(addend), Is.EqualTo(result));
