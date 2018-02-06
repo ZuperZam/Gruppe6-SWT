@@ -9,6 +9,11 @@ namespace Calculator
             return a + b;
         }
 
+        public double Add(double addend)
+        {
+            return addend + Accumulator;
+        }
+
         public double Subtract(double a, double b)
         {
             return a - b;
