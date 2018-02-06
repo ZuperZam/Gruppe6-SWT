@@ -23,5 +23,23 @@ namespace Calculator
         {
             return Math.Pow(a, b);
         }
+
+        public double Divide(double dividend, double divisor)
+        {
+            double result = 0;
+            try
+            {
+                if (divisor != 0)
+                    result = dividend / divisor;
+            }
+
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("ERROR: CAN'T DIVIDE BY ZERO");
+                return -1;
+            }
+
+            return result;
+        }
     }
 }
