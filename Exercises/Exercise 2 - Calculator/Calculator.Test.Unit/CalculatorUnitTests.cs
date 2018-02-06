@@ -68,14 +68,13 @@ namespace Calculator.Test.Unit
         public void Divide_ByZero_Exception(double divider, double dividend)
         {
             Assert.Throws<DivideByZeroException>(() => _uut.Divide(divider, dividend));
-          
+
         }
 
         [TestCase(2, 2)]
         public void Divide_NoException(double divider, double dividend)
         {
             Assert.DoesNotThrow(() => _uut.Divide(divider, dividend));
-
         }
 
         [TestCase(3, 2, 1.5)]
@@ -88,6 +87,22 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Divide(divider, dividend), Is.EqualTo(result));
 
+        }
+
+        [TestCase(2, 0)]
+        public void Power_ByNumber_PosAndNeg(double exponent, double result)
+        {
+            Assert.That(_uut.Power(exponent), Is.EqualTo(result));
+        }
+
+        public void Accumulator_Set(double result)
+        {
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
+        }
+        [TestCase(0)]
+        public void Clear_Accumulator(double result)
+        {
+            Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
     }
 
