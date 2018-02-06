@@ -29,6 +29,11 @@ namespace Calculator
             return a * b;
         }
 
+        public double Multiply(double multiplier)
+        {
+            return multiplier * Accumulator;
+        }
+
         public double Power(double a, double b)
         {
             return Math.Pow(a, b);
