@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Calculator
 {
@@ -11,7 +12,8 @@ namespace Calculator
 
         public double Add(double addend)
         {
-            return addend + Accumulator;
+            Accumulator = addend + Accumulator;
+            return Accumulator;
         }
 
         public double Subtract(double a, double b)
@@ -21,7 +23,8 @@ namespace Calculator
 
         public double Subtract(double subtractor)
         {
-            return subtractor - Accumulator;
+            Accumulator = subtractor - Accumulator;
+            return Accumulator;
         }
 
         public double Multiply(double a, double b)
