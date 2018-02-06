@@ -27,18 +27,16 @@ namespace Calculator
         public double Divide(double dividend, double divisor)
         {
             double result = 0;
-            try
-            {
-                if (divisor != 0)
-                    result = dividend / divisor;
-            }
 
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("ERROR: CAN'T DIVIDE BY ZERO");
-                return -1;
-            }
 
+            if (divisor == 0)
+            {
+                result = -1;
+                throw new System.DivideByZeroException();
+
+            }
+                
+            result = dividend / divisor;
             return result;
         }
     }

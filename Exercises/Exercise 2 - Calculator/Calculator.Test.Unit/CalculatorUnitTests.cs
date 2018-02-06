@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Calculator;
 using NUnit.Framework;
 
@@ -57,10 +58,37 @@ namespace Calculator.Test.Unit
         [TestCase(1, -10, 1)]
         [TestCase(10, 0, 1)]
         [TestCase(4, 0.5, 2.0)]
-		[TestCase(9, 0.5, 3.0)]
+        [TestCase(9, 0.5, 3.0)]
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
         }
+
+        [TestCase(2, 0)]
+        public void Divide_ByZero_Exception(double divider, double dividend)
+        {
+            Assert.Throws<DivideByZeroException>(() => _uut.Divide(divider, dividend));
+          
+        }
+
+        [TestCase(2, 2)]
+        public void Divide_NoException(double divider, double dividend)
+        {
+            Assert.DoesNotThrow(() => _uut.Divide(divider, dividend));
+
+        }
+
+        [TestCase(3, 2, 1.5)]
+        [TestCase(-3, -2, 1.5)]
+        [TestCase(-3, 2, -1.5)]
+        [TestCase(3, -2, -1.5)]
+        [TestCase(0.5, -2.5, -0.2)]
+        [TestCase(-2.5, 0.5, -5)]
+        public void Divide_ByNumber(double divider, double dividend, double result)
+        {
+            Assert.That(_uut.Divide(divider, dividend), Is.EqualTo(result));
+
+        }
     }
+
 }
