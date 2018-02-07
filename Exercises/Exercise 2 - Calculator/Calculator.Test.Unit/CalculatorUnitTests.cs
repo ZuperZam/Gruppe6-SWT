@@ -19,6 +19,9 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(3, 2, 5)]
+        [TestCase(-3, -2, -5)]
+        [TestCase(-3, 2, -1)]
+        [TestCase(3, -2, 1)]
         public void Add_AddPosAndNegNumbers_ResultIsCorrect(int a, int b, int result)
         {
             Assert.That(_uut.Add(a, b), Is.EqualTo(result));
@@ -86,7 +89,7 @@ namespace Calculator.Test.Unit
         }
 
         [TestCase(2, 16)]
-        [TestCase(-2, 0.00390625)]
+        [TestCase(-1, 0.25)]
         public void Power_RaiseNumbers_Accumulator(double x, double result)
         {
             _uut.Power(2, 2);
@@ -115,6 +118,15 @@ namespace Calculator.Test.Unit
         public void Divide_ByNumber(double divider, double dividend, double result)
         {
             Assert.That(_uut.Divide(divider, dividend), Is.EqualTo(result));
+
+        }
+
+        [TestCase(2, 1)]
+        [TestCase(-2, -1)]
+        public void Divide_ByNumber_Accumulator(double divider, double result)
+        {
+            _uut.Divide(8, 4);
+            Assert.That(_uut.Divide(divider), Is.EqualTo(result));
 
         }
 
