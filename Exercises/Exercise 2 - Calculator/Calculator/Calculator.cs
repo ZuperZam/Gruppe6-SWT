@@ -31,30 +31,35 @@ namespace Calculator
 
         public double Multiply(double a, double b)
         {
-            return a * b;
+            Accumulator = a * b;
+            return Accumulator;
         }
 
         public double Multiply(double multiplier)
         {
-            return multiplier * Accumulator;
+            Accumulator = multiplier * Accumulator;
+            return Accumulator;
         }
 
         public double Power(double a, double b)
         {
-            return Math.Pow(a, b);
+            Accumulator = Math.Pow(a, b);
+            return Accumulator;
         }
 
         public double Power(double exponent)
         {
-            return Math.Pow(Accumulator, exponent);
+            Accumulator = Math.Pow(Accumulator, exponent);
+            return Accumulator;
         }
 
         public double Divide(double dividend, double divisor)
         {
             if (divisor == 0)
                 throw new System.DivideByZeroException();
-                
-            return dividend / divisor;
+
+            Accumulator = dividend / divisor;
+            return Accumulator;
         }
 
         public double Divide(double divisor)
@@ -62,7 +67,8 @@ namespace Calculator
             if (divisor == 0)
                 throw new System.DivideByZeroException();
 
-            return Accumulator / divisor;
+            Accumulator = Accumulator / divisor;
+            return Accumulator;
         }
 
         public double Accumulator { get; private set; }
