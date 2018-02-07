@@ -43,6 +43,15 @@ namespace Calculator.Test.Unit
         }
 
 
+        [TestCase(10, 4)]
+        [TestCase(-3, -9)]
+        public void Subtract_SubtractPosAndNegNumbers_Accumulator(int a, int result)
+        {
+            _uut.Subtract(4, -2);
+            Assert.That(_uut.Subtract(a), Is.EqualTo(result));
+        }
+
+
         [TestCase(3, 2, 6)]
         [TestCase(-3, -2, 6)]
         [TestCase(-3, 2, -6)]
@@ -50,11 +59,18 @@ namespace Calculator.Test.Unit
         [TestCase(0, -2, 0)]
         [TestCase(-2, 0, 0)]
         [TestCase(0, 0, 0)]
-        public void Multiply_MultiplyNunmbers_ResultIsCorrect(int a, int b, int result)
+        public void Multiply_MultiplyNumbers_ResultIsCorrect(int a, int b, int result)
         {
             Assert.That(_uut.Multiply(a, b), Is.EqualTo(result));
         }
 
+        [TestCase(3, 18)]
+        [TestCase(-3, -18)]
+        public void Multiply_MultiplyNumbers_Accumulator(int a, int result)
+        {
+            _uut.Multiply(2, 3);
+            Assert.That(_uut.Multiply(a), Is.EqualTo(result));
+        }
 
         [TestCase(2, 3, 8)]
         [TestCase(2, -3, 0.125)]
@@ -67,6 +83,14 @@ namespace Calculator.Test.Unit
         public void Power_RaiseNumbers_ResultIsCorrect(double x, double exp, double result)
         {
             Assert.That(_uut.Power(x, exp), Is.EqualTo(result));
+        }
+
+        [TestCase(2, 16)]
+        [TestCase(-2, 0.00390625)]
+        public void Power_RaiseNumbers_Accumulator(double x, double result)
+        {
+            _uut.Power(2, 2);
+            Assert.That(_uut.Power(x), Is.EqualTo(result));
         }
 
         [TestCase(2, 0)]
@@ -104,6 +128,7 @@ namespace Calculator.Test.Unit
         {
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
+
         [TestCase(0)]
         public void Clear_Accumulator(double result)
         {
