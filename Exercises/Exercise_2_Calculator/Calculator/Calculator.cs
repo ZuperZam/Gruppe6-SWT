@@ -3,7 +3,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Calculator
 {
-    //Hey bby
     public class Calculator
     {
         public double Add(double a, double b)
