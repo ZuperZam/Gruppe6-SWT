@@ -58,6 +58,21 @@ namespace Calculator
             if (divisor == 0)
                 throw new System.DivideByZeroException();
 
+<<<<<<< HEAD:Exercises/Exercise 2 _Calculator/Calculator/Calculator.cs
+            try
+            {
+                if (divisor != 0)
+                    result = dividend / divisor;
+            }
+
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("ERROR: CAN'T DIVIDE BY ZERO");
+                return -1;
+            }
+
+            return result;
+=======
             Accumulator = dividend / divisor;
             return Accumulator;
         }
@@ -76,6 +91,7 @@ namespace Calculator
         public void Clear()
         {
             Accumulator = 0;
+>>>>>>> ff4f235f83d4c218b6cf484b87e6f1bb0a2afbf7:Exercises/Exercise 2 - Calculator/Calculator/Calculator.cs
         }
     }
 }
