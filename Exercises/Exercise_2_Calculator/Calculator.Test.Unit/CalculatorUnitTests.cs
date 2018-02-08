@@ -100,7 +100,6 @@ namespace Calculator.Test.Unit
         public void Divide_ByZero_Exception(double divider, double dividend)
         {
             Assert.Throws<DivideByZeroException>(() => _uut.Divide(divider, dividend));
-
         }
 
         [TestCase(2, 2)]
@@ -127,7 +126,6 @@ namespace Calculator.Test.Unit
         {
             _uut.Divide(8, 4);
             Assert.That(_uut.Divide(divider), Is.EqualTo(result));
-
         }
 
         [TestCase(2, 0)]
