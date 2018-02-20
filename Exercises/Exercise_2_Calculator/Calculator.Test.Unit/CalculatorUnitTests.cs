@@ -128,20 +128,31 @@ namespace Calculator.Test.Unit
             Assert.That(_uut.Divide(divider), Is.EqualTo(result));
         }
 
+        [TestCase(0)]
+        public void Divide_ByZeroException_Accumulator(double divider)
+        {
+            _uut.Divide(8, 4);
+            Assert.Throws<DivideByZeroException>(() => _uut.Divide(divider));
+        }
+
+        [TestCase(2)]
+        public void Divide_NoByZeroException_Accumulator(double divider)
+        {
+            _uut.Divide(8, 4);
+            Assert.DoesNotThrow(() => _uut.Divide(divider));
+        }
+
         [TestCase(2, 0)]
         public void Power_ByNumber_PosAndNeg(double exponent, double result)
         {
             Assert.That(_uut.Power(exponent), Is.EqualTo(result));
         }
 
-        public void Accumulator_Set(double result)
-        {
-            Assert.That(_uut.Accumulator, Is.EqualTo(result));
-        }
-
         [TestCase(0)]
         public void Clear_Accumulator(double result)
         {
+            _uut.Add(1, 1);
+            _uut.Clear();
             Assert.That(_uut.Accumulator, Is.EqualTo(result));
         }
     }
